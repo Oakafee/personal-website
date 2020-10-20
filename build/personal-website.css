@@ -1,0 +1,104 @@
+body {
+  background-image: url("../rock-background-muted.jpg");
+  background-color: #AAA8AA;
+  color: #2B2720;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+p {
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 14pt;
+}
+
+.personal-website__nav {
+  color: #AAA8AA;
+  background-color: #2B2720;
+  display: flex;
+}
+.personal-website__nav-logo {
+  flex: 0 0 auto;
+  border: 2px solid #AAA8AA;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.personal-website__nav-item {
+  flex: 1 0 auto;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.personal-website__nav-item:hover {
+  background-color: #969697;
+  color: #2B2720;
+}
+.personal-website__container {
+  margin-top: 50px;
+}
+.personal-website__section {
+  width: 900px;
+  margin: 0 auto;
+}
+.personal-website__section--intro {
+  display: flex;
+}
+.personal-website__section--worklist {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.personal-website__selfie {
+  width: 420px;
+  height: 375px;
+  flex: 1 0 auto;
+  margin-right: 20px;
+}
+.personal-website__intro {
+  background-color: #969697;
+  padding: 0 10px 10px 20px;
+}
+.personal-website__work-radio {
+  display: none;
+}
+.personal-website__work-category {
+  background-color: #2B2720;
+  border: none;
+  border-right: 1px solid #AAA8AA;
+  color: #AAA8AA;
+  font-size: 12pt;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+.personal-website__work-category:last-child {
+  border-right: none;
+}
+.personal-website__work-category:hover {
+  background-color: #AAA8AA;
+  color: #2B2720;
+}
+.personal-website__work-radio:checked + .personal-website__work-category {
+  background-color: #AAA8AA;
+  color: #2B2720;
+}
+.personal-website__entity {
+  height: 300px;
+  flex: 0 0 220px;
+  margin: 0 20px 0 0;
+  padding: 10px;
+  background-color: #969697;
+  transition: background-color 0.3s;
+  color: inherit;
+  text-decoration: none;
+}
+.personal-website__entity:hover {
+  background-color: #AAA8AA;
+}
+
+/*# sourceMappingURL=personal-website.css.map */

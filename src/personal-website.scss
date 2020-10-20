@@ -1,0 +1,119 @@
+//colors
+$dark-color: #2B2720;
+$medium-color: #969697;
+$light-color: #AAA8AA;
+
+//formatting
+$content-width: 900px;
+$spacing: 10px;
+$spacing-dbl: 2 * $spacing;
+
+
+//animations
+$trans-time: 0.3s;
+
+body {
+	background-image: url("../rock-background-muted.jpg");
+	background-color: $light-color;
+	color: $dark-color;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0.5px;
+}
+
+p {
+	line-height: 1.4;
+}
+
+h2 {
+	font-size: 14pt;
+}
+
+.personal-website {
+	&__nav {
+		color: $light-color;
+		background-color: $dark-color;
+		display: flex;
+		&-logo {
+			flex: 0 0 auto;
+			border: 2px solid $light-color;
+			padding: $spacing;
+			cursor: pointer;
+			text-transform: uppercase;		
+		}
+		&-item {
+			flex: 1 0 auto;
+			text-align: center;
+			padding: $spacing;
+			cursor: pointer;
+			transition: background-color $trans-time, color $trans-time;
+			&:hover {
+				background-color: $medium-color;
+				color: $dark-color;	
+			}
+		}
+	}
+	&__container {
+		margin-top: 50px;
+	}
+	&__section {
+		width: $content-width;
+		margin: 0 auto;
+		&--intro {
+			display: flex;
+		}
+		&--worklist {
+			display: flex;
+			flex-wrap: wrap;	
+			margin-top: 2 * $spacing;	
+		}
+	}
+	&__selfie {
+		width: 420px;
+		height: 375px;
+		flex: 1 0 auto;
+		margin-right: $spacing-dbl;
+	}
+	&__intro {
+		background-color: $medium-color;
+		padding: 0 $spacing $spacing $spacing-dbl;
+	}
+	&__work-radio {
+		display: none;
+	}
+	&__work-category {
+		background-color: $dark-color;
+		border: none;
+		border-right: 1px solid $light-color;
+		color: $light-color;
+		font-size: 12pt;
+		padding: $spacing $spacing-dbl;
+		transition: background-color $trans-time;
+		&:last-child {
+			border-right: none;
+		}
+		&:hover {
+			background-color: $light-color;
+			color: $dark-color;		
+		}
+	}
+	&__work-radio:checked + &__work-category {
+		background-color: $light-color;
+		color: $dark-color;
+	}
+	&__entity {
+		height: 300px;
+		flex: 0 0 220px;
+		margin: 0 $spacing-dbl 0 0;
+		padding: $spacing;
+		background-color: $medium-color;
+		transition: background-color $trans-time;
+		//overriding browser default link styles
+		color: inherit;
+		text-decoration: none;
+		&:hover {
+			background-color: $light-color;
+		}
+	}
+}
