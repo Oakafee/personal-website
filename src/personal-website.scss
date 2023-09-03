@@ -1,11 +1,16 @@
+// use this command:
+// sass --watch src/personal-website.scss build/personal-website.css
+
 //colors
-$dark-color: #2B2720;
+$almost-black: #2B2720;
+$dark-color: #322F32;
 $medium-color: #969697;
 $light-color: #AAA8AA;
+$almost-white: #D8D1CE;
 
 //formatting
 $content-width: 900px;
-$spacing: 10px;
+$spacing: 15px;
 $spacing-dbl: 2 * $spacing;
 
 
@@ -47,18 +52,21 @@ h2 {
 			text-align: center;
 			padding: $spacing;
 			cursor: pointer;
+			// align-self does the vertical alignment in flex box
+			align-self: center;
 			transition: background-color $trans-time, color $trans-time;
 			&:hover {
-				background-color: $medium-color;
-				color: $dark-color;	
+				background-color: $almost-black;
+				color: $almost-white;	
 			}
 		}
 	}
 	&__container {
 		margin-top: 50px;
+		padding: 0 $spacing;
 	}
 	&__section {
-		width: $content-width;
+		max-width: $content-width;
 		margin: 0 auto;
 		&--intro {
 			display: flex;
@@ -104,7 +112,8 @@ h2 {
 	}
 	&__entity {
 		height: 400px;
-		flex: 0 0 220px;
+		max-width: 350px;
+		flex: 0 0 auto;
 		margin: 0 40px 40px 0;
 		padding: $spacing;
 		background-color: $medium-color;
@@ -119,10 +128,13 @@ h2 {
 			width: 220px;
 		}
 		&-type {
+			display: flex;
+			margin: 6px 0;
+		}
+		&-tag {
 			font-size: 9pt;
 			color: $light-color;
 			background-color: $dark-color;
-			float: right;
 			padding: 2px 4px;
 		}
 	}

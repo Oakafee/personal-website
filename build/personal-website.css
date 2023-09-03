@@ -1,7 +1,7 @@
 body {
   background-image: url("../rock-background-muted.jpg");
   background-color: #AAA8AA;
-  color: #2B2720;
+  color: #322F32;
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -18,32 +18,34 @@ h2 {
 
 .personal-website__nav {
   color: #AAA8AA;
-  background-color: #2B2720;
+  background-color: #322F32;
   display: flex;
 }
 .personal-website__nav-logo {
   flex: 0 0 auto;
   border: 2px solid #AAA8AA;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
   text-transform: uppercase;
 }
 .personal-website__nav-item {
   flex: 1 0 auto;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
+  align-self: center;
   transition: background-color 0.3s, color 0.3s;
 }
 .personal-website__nav-item:hover {
-  background-color: #969697;
-  color: #2B2720;
+  background-color: #2B2720;
+  color: #D8D1CE;
 }
 .personal-website__container {
   margin-top: 50px;
+  padding: 0 15px;
 }
 .personal-website__section {
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .personal-website__section--intro {
@@ -52,28 +54,28 @@ h2 {
 .personal-website__section--worklist {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .personal-website__selfie {
   width: 420px;
   height: 375px;
   flex: 1 0 auto;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 .personal-website__intro {
   background-color: #969697;
-  padding: 0 10px 10px 20px;
+  padding: 0 15px 15px 30px;
 }
 .personal-website__work-radio {
   display: none;
 }
 .personal-website__work-category {
-  background-color: #2B2720;
+  background-color: #322F32;
   border: none;
   border-right: 1px solid #AAA8AA;
   color: #AAA8AA;
   font-size: 12pt;
-  padding: 10px 20px;
+  padding: 15px 30px;
   transition: background-color 0.3s;
 }
 .personal-website__work-category:last-child {
@@ -81,17 +83,18 @@ h2 {
 }
 .personal-website__work-category:hover {
   background-color: #AAA8AA;
-  color: #2B2720;
+  color: #322F32;
 }
 .personal-website__work-radio:checked + .personal-website__work-category {
   background-color: #AAA8AA;
-  color: #2B2720;
+  color: #322F32;
 }
 .personal-website__entity {
   height: 400px;
-  flex: 0 0 220px;
+  max-width: 350px;
+  flex: 0 0 auto;
   margin: 0 40px 40px 0;
-  padding: 10px;
+  padding: 15px;
   background-color: #969697;
   transition: background-color 0.3s;
   color: inherit;
@@ -104,10 +107,13 @@ h2 {
   width: 220px;
 }
 .personal-website__entity-type {
+  display: flex;
+  margin: 6px 0;
+}
+.personal-website__entity-tag {
   font-size: 9pt;
   color: #AAA8AA;
-  background-color: #2B2720;
-  float: right;
+  background-color: #322F32;
   padding: 2px 4px;
 }
 
