@@ -103,9 +103,9 @@ h2 {
 		color: $dark-color;
 	}
 	&__entity {
-		height: 300px;
+		height: 400px;
 		flex: 0 0 220px;
-		margin: 0 $spacing-dbl 0 0;
+		margin: 0 40px 40px 0;
 		padding: $spacing;
 		background-color: $medium-color;
 		transition: background-color $trans-time;
@@ -114,6 +114,16 @@ h2 {
 		text-decoration: none;
 		&:hover {
 			background-color: $light-color;
+		}
+		&-img {
+			width: 220px;
+		}
+		&-type {
+			font-size: 9pt;
+			color: $light-color;
+			background-color: $dark-color;
+			float: right;
+			padding: 2px 4px;
 		}
 	}
 }

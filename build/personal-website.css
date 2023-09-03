@@ -88,9 +88,9 @@ h2 {
   color: #2B2720;
 }
 .personal-website__entity {
-  height: 300px;
+  height: 400px;
   flex: 0 0 220px;
-  margin: 0 20px 0 0;
+  margin: 0 40px 40px 0;
   padding: 10px;
   background-color: #969697;
   transition: background-color 0.3s;
@@ -99,6 +99,16 @@ h2 {
 }
 .personal-website__entity:hover {
   background-color: #AAA8AA;
+}
+.personal-website__entity-img {
+  width: 220px;
+}
+.personal-website__entity-type {
+  font-size: 9pt;
+  color: #AAA8AA;
+  background-color: #2B2720;
+  float: right;
+  padding: 2px 4px;
 }
 
 /*# sourceMappingURL=personal-website.css.map */
