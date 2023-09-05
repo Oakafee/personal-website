@@ -4,22 +4,24 @@
 <meta charset="utf-8" />
 <title>Jesse Fried, GIS </title>
 <link rel="stylesheet" type="text/css" href="build/personal-website.css" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body id="home">
 	<nav class="personal-website__nav">
 		<div class="personal-website__nav-logo">JF</div>
-		<div class="personal-website__nav-item">Work</div>
-		<div class="personal-website__nav-item">About</div>
-		<div class="personal-website__nav-item">Resume</div>
-		<div class="personal-website__nav-item">Contact</div>
+		<a href="#work" class="personal-website__nav-item">Work</a>
+		<a href="#about" class="personal-website__nav-item">About</a>
+		<a href="#resume" class="personal-website__nav-item">Resume</a>
+		<a href="#contact" class="personal-website__nav-item">Contact</a>
 	</nav>
 	<main class="personal-website__container">
-		<section class="personal-website__section">
+		<section class="personal-website__section personal-website__section--tagline">
 			<h2>Jesse Fried: GIS, web development and data science with a research focus on drinking water
 			</h2>
 		</section>
-		<section class="personal-website__section" id="work">
+		<span id="work"></span>
+		<section class="personal-website__section">
 			<h1>Work </h1>
 		</section>
 		<section class="personal-website__section personal-website__section--worklist" id="workList">
@@ -33,20 +35,29 @@
 				<p>Content </p>
 			</a>
 		</section>
-				<section class="personal-website__section personal-website__section--intro">
-			<img class="personal-website__selfie" src="selfie-md.jpg" />
+		<span id="about"></span>
+		<section class="personal-website__section personal-website__section--intro">
+			<img class="personal-website__selfie" src="selfie-fl.jpg" />
 			<div class="personal-website__intro">
-				<h1>Jesse Fried, Web Developer </h1>
-				<p>Jesse Fried is a web developer with a focus on building client-side applications. He enjoys working closely with designers. Specializing in the vue.js framework, he also admires react.js, tolerates backbone.js, and feels there is a place for plain JavaScript. Good friends with CSS, he is grateful every day for SASS. He treasures the deceptively simple skill of writing clean, semantic markup with solid class naming conventions. </p>
-				<p>When a web server is called for, he likes to rely on Django. A few data analysis projects have made hime more conversant in Python. Unfortunately he fears and mistrusts AWS other than S3. The bulk of his professional experience has been on the External Web Apps team at ASCAP, where he learned from the best in the business. Other interests include making maps, learning about geology and history, hiking, and playing music.  </p>
+				<h1>About </h1>
+				<p>I combine professional level skills in GIS - from ESRI products to open source Python libraries - and front end web development with a research focus on drinking water. My work experience in these areas spans from helping the Florida Geologic Survey (FGS) transition their geologic map data to federal <a href="https://ngmdb.usgs.gov/Info/standards/GeMS/" target="_blank">GeMS standards</a>, to supporting the Engineering team at Florida Rural Water Association (FRWA), to building web apps using Vue.js on a team of front end developers at ASCAP. </p>
+				<p>My masters research in Geography focuses on drinking water infrastructure, urban development and "creative extraction," especially in urban New Jersey. My thesis brought a mixed-methods approach to study the drinking water lead contamination crisis in Newark, NJ. </p>
+				<p>Currently based in New York, I am consulting for FGS and pursuing opportunities in drinking water and related fields. </p>
 			</div>
 		</section>
 		<section class="personal-website__section" id="resume">
-			<h1>Resume etc. </h1>
+			<h1>Resume</h1>
+			<ul><li><a href="resume-jf.pdf" target="_blank">View my resume here</a></li></ul>
 		</section>
 		<section class="personal-website__section" id="contact">
-			<h1>Contact me </h1>
+			<h1>Contact</h1>
+			<ul>
+				<li><a href="https://www.linkedin.com/in/jesse-fried-a6861256/" target="_blank">Linkedin profie </a></li>
+				<li>See <a href="resume-jf.pdf" target="_blank">resume</a> for additional contact info </li>
+			</ul>
+			<p>
 		</section>
+		<footer class="personal-website__footer"><p>Thanks for visiting my personal website. Please don't hesitate to reach out! </p></footer>
 		<main>
 	</main>
 	<script src="src/personal-website.js"></script>

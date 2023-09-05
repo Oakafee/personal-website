@@ -31,8 +31,14 @@ p {
 	line-height: 1.4;
 }
 
+h1 {
+	font-size: 36pt
+}
+
 h2 {
 	font-size: 14pt;
+	margin: 0;
+	line-height: 1.2;
 }
 
 .personal-website {
@@ -40,6 +46,10 @@ h2 {
 		color: $light-color;
 		background-color: $dark-color;
 		display: flex;
+		// add these two classes dynamically when scroll up is detected
+		position: sticky;
+		top: 0;
+		z-index: 9;
 		&-logo {
 			flex: 0 0 auto;
 			border: 2px solid $light-color;
@@ -51,7 +61,9 @@ h2 {
 			flex: 1 0 auto;
 			text-align: center;
 			padding: $spacing;
-			cursor: pointer;
+			// the following two lines are to override default anchor element styles
+			color: inherit;
+			text-decoration: inherit;
 			// align-self does the vertical alignment in flex box
 			align-self: center;
 			transition: background-color $trans-time, color $trans-time;
@@ -64,28 +76,37 @@ h2 {
 	&__container {
 		margin-top: 50px;
 		padding: 0 $spacing;
+		opacity: 1;
 	}
 	&__section {
 		max-width: $content-width;
 		margin: 0 auto;
-		&--intro {
-			display: flex;
+		&--tagline {
+			padding: $spacing;
+			background-color: $light-color;
+			//border: 1px solid $dark-color;
 		}
 		&--worklist {
 			display: flex;
 			flex-wrap: wrap;	
 			margin-top: 2 * $spacing;	
 		}
+		&--intro {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: $spacing-dbl;
+		}
 	}
 	&__selfie {
 		width: 420px;
-		height: 375px;
-		flex: 1 0 auto;
-		margin-right: $spacing-dbl;
+		height: 475px;
+		flex: 0 0 auto;
+		margin: 0 $spacing-dbl $spacing-dbl 0;
 	}
 	&__intro {
 		background-color: $medium-color;
 		padding: 0 $spacing $spacing $spacing-dbl;
+		flex: 1 1;
 	}
 	&__work-radio {
 		display: none;
@@ -111,31 +132,46 @@ h2 {
 		color: $dark-color;
 	}
 	&__entity {
-		height: 400px;
 		max-width: 350px;
 		flex: 0 0 auto;
 		margin: 0 40px 40px 0;
 		padding: $spacing;
 		background-color: $medium-color;
 		transition: background-color $trans-time;
+		transition: box-shadow $trans-time;
 		//overriding browser default link styles
 		color: inherit;
 		text-decoration: none;
 		&:hover {
 			background-color: $light-color;
+			box-shadow: 0 0 $spacing $dark-color;
 		}
 		&-img {
-			width: 220px;
+			width: 100%;
 		}
 		&-type {
 			display: flex;
+			justify-content: end;
 			margin: 6px 0;
 		}
 		&-tag {
 			font-size: 9pt;
 			color: $light-color;
 			background-color: $dark-color;
-			padding: 2px 4px;
+			padding: 5px 6px 4px;
 		}
+	}
+	&__footer {
+		margin-top: 70px;
+		text-align: center;
+	}
+}
+
+.animation-opacity {
+	&-zero {
+		opacity: 0;
+	}
+	&-transition {
+		transition: opacity $trans-time;
 	}
 }

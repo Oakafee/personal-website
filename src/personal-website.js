@@ -4,18 +4,46 @@ window.onload = function() {
     	workListClassName: 'personal-website__section--worklist',
     	works: [
     		{
+    			'title': 'Development of New Jersey\'s municipalities',
+    			'worktype': 'GIS, Web',
+    			'imgSrc': 'works/nj-muni.png',
+    			'description': 'A visualization of property tax data for NJ by year built',
+    			'href': 'https://nj-muni.s3.us-east-2.amazonaws.com/index.html',
+    		},
+    		{
     			'title': 'ASCAP: Member Enrollment',
     			'worktype': 'Web',
     			'imgSrc': 'works/ome.png',
-    			'description': 'I personally built the UI for this web application, to designers\' specifications. My other front-end dev team members handled the API calls, etc. Six years later, ASCAP still uses this app to enroll new members with few if any changes.',
+    			'description': 'Tens of thousands of music creators have used this web application to become ASCAP members, and after six years, it has only changed minimally. I built the UI, to designers\' specifications, while my other front-end dev team members handled the API calls, etc. ',
     			'href': 'https://ome.ascap.com/',
     		},
     		{
-    			'title': 'ASCAP: Member Access',
+    			'title': 'ASCAP: ACE Repertory Search',
     			'worktype': 'Web',
-    			'imgSrc': 'works/ma.png',
-    			'description': 'Over the course of several years, I added many new features and performed extensive maintenance this massive app serving hundereds of thousands of ASCAP members',
-    			'href': 'https://www.ascap.com/member-access',
+    			'imgSrc': 'works/ace.png',
+    			'description': 'I also contributed substantially to this web app to explore ASCAP\'s repertory.',
+    			'href': 'https://www.ascap.com/ace',
+    		},
+    		{
+    			'title': 'Racialized Politics of Drinking Water Chemistry: The Case of Newark\'s Lead Crisis',
+    			'worktype': 'GIS, Water(, Web)',
+    			'imgSrc': 'works/thesis.png',
+    			'description': 'Mixed-methods masters thesis on the drinking water lead crisis in Newark, NJ and the community\'s response to it.',
+    			'href': 'https://www.proquest.com/docview/2829638676',
+    		},
+    		{
+    			'title': 'Interpretation of New Jersey',
+    			'worktype': 'GIS, Web',
+    			'imgSrc': 'works/inj.png',
+    			'description': 'An interactive map of New Jersey with articles. A longstanding passion project of mine',
+    			'href': 'https://www.interpretation-of-nj.com/',
+    		},
+    		{
+    			'title': '*Wastewater Treatment in the Passaic River watershed',
+    			'worktype': 'GIS, Water',
+    			'imgSrc': 'works/passaic-phosphorous.png',
+    			'description': 'A grad school paper, "Enforcing Municipal Sewage Treatment Plant Effluent Quality in an Urban Watershed: New Jersey’s Passaic River", featuring some static maps.',
+    			'href': 'https://nj-muni.s3.us-east-2.amazonaws.com/index.html',
     		},
     		{
     			'title': 'Lovers List',
@@ -25,40 +53,12 @@ window.onload = function() {
     			'href': 'http://www.jonfried.net/lovers-list',
     		},
     		{
-    			'title': 'Interpretation of New Jersey',
-    			'worktype': 'GIS/Web',
-    			'imgSrc': 'works/inj.png',
-    			'description': 'An interactive map of New Jersey with articles',
-    			'href': 'https://www.interpretation-of-nj.com/',
-    		},
-    		{
-    			'title': 'Development of New Jersey\'s municipalities',
-    			'worktype': 'GIS/Web',
-    			'imgSrc': 'works/nj-muni.png',
-    			'description': 'A visualization of property tax data for NJ by year built',
-    			'href': 'https://nj-muni.s3.us-east-2.amazonaws.com/index.html',
-    		},
-    		{
-    			'title': '*Wastewater Treatment in the Passaic River watershed',
-    			'worktype': 'GIS/Water',
-    			'imgSrc': 'works/nj-muni.png',
-    			'description': 'A grad school paper, "Enforcing Municipal Sewage Treatment Plant Effluent Quality in an Urban Watershed: New Jersey’s Passaic River", featuring some static maps.',
-    			'href': 'https://nj-muni.s3.us-east-2.amazonaws.com/index.html',
-    		},
-    		{
     			'title': 'Florida Population Density (Cartography Exercise)',
-    			'worktype': 'GIS/Web',
-    			'imgSrc': 'works/nj-muni.png',
-    			'description': 'Project from a cartography class in which I reproduced another student\'s static map design in the form of an interactive, web-based map.',
+    			'worktype': 'GIS, Web',
+    			'imgSrc': 'works/thematic-cart.png',
+    			'description': 'Project from a cartography class in which I exactly reproduced another student\'s static map design in the form of an interactive, web-based map.',
     			'href': 'http://thematic-cart-final-project2.s3-website-us-east-1.amazonaws.com/',
     		},
-    		{
-    			'title': '*Racialized Politics of Drinking Water Chemistry: The Case of Newark\'s Lead Crisis',
-    			'worktype': 'GIS/Water(/Web)',
-    			'imgSrc': 'works/nj-muni.png',
-    			'description': 'Mixed-methods masters thesis on the drinking water lead crisis in Newark, NJ and the community\'s response to it.',
-    			'href': 'https://nj-muni.s3.us-east-2.amazonaws.com/index.html',
-    		}
     	],
     	renderWorks() {
     		let workEntity = document.getElementsByClassName(this.workEntityClassName)[0];
@@ -75,7 +75,29 @@ window.onload = function() {
 	    		workList.appendChild(newWorkEntity);
     		});
     		workEntity.style.display = 'none';
+		},
+		flashContent(event) {
+			main = document.getElementsByTagName("main")[0];
+			main.classList.add(
+				'animation-opacity-zero',
+			);
+			setTimeout(() => {
+				main = document.getElementsByTagName("main")[0];
+				main.classList.add('animation-opacity-transition')
+			}, 100);
+			setTimeout(() => {
+				main = document.getElementsByTagName("main")[0];
+				main.classList.remove('animation-opacity-zero')
+			}, 200)
+			setTimeout(() => {
+				main = document.getElementsByTagName("main")[0];
+				main.classList.remove('animation-opacity-transition')
+			}, 600)
 		}
     }
 	personalWebsite.renderWorks();
+	document.getElementsByTagName("nav")[0].addEventListener(
+		'click',
+		personalWebsite.flashContent
+	);
 }
